@@ -19,6 +19,24 @@ class CaixaDaLanchonete {
             debito: {},
             credito: { acrescimo: 0.03 },
         };
+
+        
+        let totalAmount = 0;
+        let mainItemsInCart = new Set();
+        let requiredMainItems = new Set();
+
+        if (items.length === 0) {
+            return "Não há itens no carrinho de compra!";
+        }
+        
+        for (const item of items) {
+            const [code, quantity] = item.split(",");
+            const product = menu[code];
+        
+            if (!product) {
+                return "Item inválido!";
+            }
+        }
     }
 }
 
