@@ -1,10 +1,7 @@
 
 
 class CaixaDaLanchonete {
-    calcularValorDaCompra(formaDePagamento, itens) {
-        if (itens.length === 0) {
-            return "Não há itens no carrinho de compra!";
-        }
+    calcularValorDaCompra(paymentMethod, items) {
 
         const menu = {
             cafe: { descricao: "Café", valor: 3.00 },
@@ -17,11 +14,11 @@ class CaixaDaLanchonete {
             combo2: { descricao: "1 Café e 1 Sanduíche", valor: 7.50 },
         };
 
-        const formasDePagamento = {
+        const paymentMethods = {
             dinheiro: { desconto: 0.05 },
             debito: {},
             credito: { acrescimo: 0.03 },
-        };  
+        };
     }
 }
 
