@@ -33,7 +33,7 @@ Aceitamos as seguintes formas de pagamento:
 
 O método `calcularValorDaCompra(paymentMethod, items)` calcula o valor da compra com base nas suas escolhas.
 
-- `formaDePagamento`: Escolha entre "dinheiro", "debito" ou "credito".
+- `paymentMethod`: Escolha entre "dinheiro", "debito" ou "credito".
 - `items`: Uma array com os itens que você deseja comprar. Cada item é uma string no formato `code,quantity`.
 
 ## Exemplos de Uso 🧾
