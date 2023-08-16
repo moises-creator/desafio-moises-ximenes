@@ -2,9 +2,9 @@ import { CaixaDaLanchonete } from "./caixa-da-lanchonete.js";
 
 describe('CaixaDaLanchonete', () => {
 
-    const validaTeste = (formaDePagamento, resultadoEsperado, itens) => {
+    const validaTeste = (paymentMethod, resultadoEsperado, items) => {
         const resultado = new CaixaDaLanchonete()
-            .calcularValorDaCompra(formaDePagamento, itens);
+            .calcularValorDaCompra(paymentMethod, items);
 
         expect(resultado.replace("\xa0", " ")).toEqual(resultadoEsperado);
     };
