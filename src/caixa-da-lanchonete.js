@@ -57,6 +57,21 @@ class CaixaDaLanchonete {
                 }
             }
         }
+        
+        if (!paymentMethods[paymentMethod]) {
+            return "Forma de pagamento inválida!";
+        }
+        
+        const paymentMethodDetails = paymentMethods[paymentMethod];
+        
+        if (paymentMethodDetails.desconto) {
+            totalAmount *= 1 - paymentMethodDetails.desconto;
+        } else if (paymentMethodDetails.acrescimo) {
+            totalAmount *= 1 + paymentMethodDetails.acrescimo;
+        }
+        const valorTotalFormatado = `R$ ${totalAmount.toFixed(2).replace(".", ",")}`;
+
+        return valorTotalFormatado;
     }
 }
 
