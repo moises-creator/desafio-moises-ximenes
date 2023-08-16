@@ -36,6 +36,26 @@ class CaixaDaLanchonete {
             if (!product) {
                 return "Item inválido!";
             }
+        
+            if (product.principal) {
+                requiredMainItems.add(product.principal);
+            } else {
+                mainItemsInCart.add(code);
+            }
+        
+            if (quantity <= 0) {
+                return "Quantidade inválida!";
+            }
+        
+            totalAmount += product.valor * quantity;
+        }
+        
+        if (requiredMainItems.size > 0) {
+            for (const mainItem of requiredMainItems) {
+                if (!mainItemsInCart.has(mainItem)) {
+                    return "Item extra não pode ser pedido sem o principal";
+                }
+            }
         }
     }
 }
